@@ -1,0 +1,7 @@
+# Build-Ergebnis (wird von GitHub Actions bzw. lokal mit build.py erzeugt)
+dist/
+__pycache__/
+*.pyc
+.DS_Store
+# Roh-Exporte nie einchecken – nur über "python3 build.py --import <datei>" übernehmen
+*export*.csv
