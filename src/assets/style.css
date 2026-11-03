@@ -478,6 +478,8 @@ html.menu-open .burger .i-menu { display: none; }
 .topic-head .i-minus, .topic.is-open .topic-head .i-plus { display: none; }
 .topic.is-open .topic-head .i-minus { display: block; }
 .topic.is-stuck .topic-head { background: var(--black); color: var(--white); }
+/* Abdeckung nach oben: kein Text zwischen Header und angeheftetem Balken (Header-Animation, Rundung, Zoom) */
+.topic.is-stuck .topic-head::before { content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: 40px; background: inherit; pointer-events: none; }
 .topic-panel { padding: 16px 24px 56px; max-width: 920px; display: flex; flex-direction: column; gap: 20px; }
 @media (min-width: 1024px) { .topic-panel { padding: 16px 24px 64px 80px; } }
 @media (max-width: 639.98px) {
