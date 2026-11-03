@@ -5,9 +5,9 @@
 
 declare(strict_types=1);
 
-const EMPFAENGER = 'kontakt@bleeding-edge-corns.de';
+const EMPFAENGER = 'kontakt@bleeding-edge-corns.com';
 // Absender muss zur Domain des Servers passen, sonst landen Mails im Spam.
-const ABSENDER = 'website@bleeding-edge-corns.de';
+const ABSENDER = 'website@bleeding-edge-corns.com';
 const THEMEN = ['Nachzucht', 'Projekte', 'Haltung', 'Sonstiges'];
 
 header('Content-Type: application/json; charset=utf-8');
@@ -47,7 +47,8 @@ if (!in_array($thema, THEMEN, true)) {
     $thema = 'Sonstiges';
 }
 
-$betreff = 'Website-Anfrage: ' . $thema . ($tier !== '' ? ' (' . $tier . ')' : '');
+$sprache = ($_POST['sprache'] ?? '') === 'en' ? ' [EN]' : '';
+$betreff = 'Website-Anfrage' . $sprache . ': ' . $thema . ($tier !== '' ? ' (' . $tier . ')' : '');
 $text = "Neue Nachricht über das Kontaktformular\n\n"
       . "Thema:   {$thema}\n"
       . ($tier !== '' ? "Tier-ID: {$tier}\n" : '')

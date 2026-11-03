@@ -1,9 +1,22 @@
-# Inhalte der Website (Texte 1:1 aus den Logikblöcken der Design-Dateien).
-# Mini-Markdown: "**fett**" in Titeln/Texten, in langen Texten zusätzlich
-# "## " (Zwischenüberschrift), "#### " (kleine Überschrift), "- " (Liste), "> " (Hinweisbox).
+# ALLE TEXTE DER WEBSITE – nach Seiten sortiert.
+# Nach einer Änderung neu bauen:  python3 build.py
+#
+# Schreibweisen in Texten:
+#   **fett**              → fett
+#   [[Wort Wort]]         → diese Wörter nicht umbrechen
+#   [Linktext](seite/)    → Link (interne Seiten relativ zur Startseite, z. B. kornnatter/ oder datenschutz/)
+# In langen Texten (Kornnatter, Rechtliches) zusätzlich am Zeilenanfang:
+#   "## " Zwischenüberschrift, "#### " kleine Überschrift, "- " Listenpunkt, "> " Hinweisbox
+#   (Rechtliches: Zeilen mit "|" werden als Adressblock untereinander gesetzt)
+#
+# Wichtig: Texte stehen in Anführungszeichen. Kommt im Text selbst ein ' vor, den Text in "…" setzen
+# (oder umgekehrt). Kommas zwischen den Einträgen nicht löschen.
 
+# ============================================================================
+# ALLGEMEIN (alle Seiten)
+# ============================================================================
 MORPHMARKET_SHOP = 'https://www.morphmarket.com/stores/andreasp/'
-EMAIL = 'kontakt@bleeding-edge-corns.de'
+EMAIL = 'kontakt@bleeding-edge-corns.com'
 
 SOCIALS = [
     # (Icon, Bezeichnung, URL) – URLs noch offen
@@ -21,7 +34,147 @@ NAV = [
     ('kontakt', 'Kontakt', 'kontakt/'),
 ]
 
-# ---------------------------------------------------------------- Projekte
+# Texte, die auf mehreren Seiten vorkommen
+SITE = {
+    'name': 'Bleeding Edge Corns',
+    'footer_text': 'Eine kleine, private Hobbyzucht aus Bielefeld – mit einem Herz für Pied-Sided Kornnattern.',
+    'copyright': '© 2026 Bleeding Edge Corns',
+    'impressum': 'Impressum',
+    'datenschutz': 'Datenschutz',
+    'mm_button': 'Nachzuchten',          # MorphMarket-Button im Header, Menü und unten (mobil)
+    'logo_alt': 'Bleeding Edge Corns',
+    'home_label': 'Bleeding Edge Corns – Startseite',
+    'menu': 'Menü',
+    'menu_close': 'Menü schließen',
+    'lang_label': 'Sprache wählen',
+    'prev': 'Zurück',
+    'next': 'Weiter',
+    # nur für Screenreader (unsichtbar)
+    'nav_main': 'Hauptnavigation',
+    'nav_mobile': 'Mobile Navigation',
+    'nav_footer': 'Footer-Navigation',
+    'mm_logo_alt': 'MorphMarket',
+}
+
+# Kontakt-Teaser unten auf den Seiten (Überschrift steht bei der jeweiligen Seite)
+CONTACT_TEASER = {
+    'eyebrow': 'Kontakt',
+    'text': 'Schreib uns – wir melden uns schnellstmöglich.',
+    'button': 'Kontakt aufnehmen',
+}
+
+# Nachzuchten-Slider (Startseite und Seite „Nachzuchten“)
+ANIMAL_SLIDER = {
+    'heading': 'Nur ein kleiner Ausschnitt – **alle Tiere findest du auf MorphMarket.**',
+    'card_link': 'Auf MorphMarket ansehen',
+    'female': 'Weibchen',
+    'male': 'Männchen',
+    'unknown': 'Unbestimmt',
+    'all_eyebrow': 'Dies war nur eine kleine Auswahl',
+    'all_title': 'Alle **Nachzuchten** ansehen',
+    'all_text': 'Der komplette, aktuelle Bestand mit Genetik und Preisen.',
+    'all_pill': 'MorphMarket',
+    'all_button': 'Alle Nachzuchten',
+    'bar_label': 'Slider scrollen',
+}
+
+# ============================================================================
+# STARTSEITE
+# ============================================================================
+
+HOME = {
+    'title': 'Startseite',
+    'description': 'Bleeding Edge Corns – private Kornnattern-Hobbyzucht aus Bielefeld mit Schwerpunkt Pied-Sided, Motley und Striped.',
+    # Bühne
+    'hero_eyebrow_before': "We're in",   # dazwischen das Herz-Icon
+    'hero_eyebrow_after': 'with pieds',
+    'hero_eyebrow_label': "We're in love with pieds",
+    'hero_h1': '**[[Bleeding Edge]] Corns:** Kornnattern aus Bielefeld',
+    'hero_text': 'Unsere Leidenschaft gilt Pied-Sided Kornnattern und den faszinierenden Zeichnungsvarianten Motley & Stripe.',
+    'hero_button_1': 'Nachzuchten',
+    'hero_button_2': 'Projekte',
+    'hero_img_alt': 'Pied-Sided Kornnatter',
+    # Projekte
+    'projects_eyebrow': 'Projekte',
+    'projects_h2': 'Unsere **Zuchtprojekte**',
+    'projects_link': 'Zum Projekt',
+    # Galerie
+    'gallery_eyebrow': 'Galerie',
+    'gallery_h2': 'Einblicke in **unsere Zucht**',
+    'gallery_filter_label': 'Galerie filtern',
+    'gallery_bar_label': 'Galerie scrollen',
+    # Über uns
+    'about_eyebrow': 'Über uns',
+    'about_h2': 'Wer hinter **Bleeding Edge Corns** steckt',
+    'about_lead': 'Hi! Ich bin Torben – der Kopf hinter Bleeding Edge Corns.',
+    'about_paras': [
+        'Seit 2007 halte ich Reptilien, und Pied-Sided Kornnattern faszinieren mich schon seit vielen Jahren. Über die Zeit haben mich ganz unterschiedliche Schlangen begleitet. Viele Arten kamen und gingen – die Kornnattern sind geblieben.',
+        'Heute bin ich Vater von zwei Jungs und arbeite als Hobby weiterhin mit einer kleinen Gruppe ausgewählter Tiere. Mein Wunsch: noch viele Menschen für diese spannenden Tiere zu begeistern.',
+    ],
+    'about_link': 'Du hast Fragen? Dann schreib mir gerne eine Nachricht\u00a0→',
+    'about_img_alt': 'Torben mit einer Kornnatter',
+    # App
+    'app_eyebrow': 'Unsere App',
+    'app_h2': 'Deine Nattern. **Im Cornnector verbunden.**',
+    'app_link': 'Mehr zur App',
+    # Kontakt-Teaser
+    'contact_h2': 'Fragen, Interesse oder **Anmerkungen?**',
+}
+
+# Vertrauensleiste: (Icon, Titel, Text)
+TRUST = [
+    ('egg', 'Eigene Zuchten', 'Alle Tiere schlüpfen bei uns in Bielefeld.'),
+    ('cn-lineage', 'Dokumentierte Abstammung', 'Mit Cornnector, unserer eigenen App, genau nachvollziehbar.'),
+    ('store', 'Store auf MorphMarket', 'Alle verfügbaren Tiere mit Genetik und Preisen.'),
+    ('map-pin', 'Übergabe in Bielefeld & Hamm', 'Persönlich vor Ort oder auf der Terraristika Hamm.'),
+]
+
+# Galerie Startseite: Fotos, Bildunterschriften und Kategorien stehen in data/galerie.csv
+# (Spalten Datei;Bildunterschrift;Kategorie – mehrere Kategorien durch Komma trennen;
+# Reihenfolge der Zeilen = Reihenfolge auf der Seite,
+# Fotos liegen in src/img/galerie/). Hier nur die Reihenfolge der Filter-Buttons:
+# erst „Alle“, dann diese Kategorien, danach neue Kategorien aus der CSV in der Reihenfolge ihres Auftretens.
+# Kategorien ohne Foto werden ausgeblendet.
+GALLERY_ALL = 'Alle'
+GALLERY_CATS = ['Diffused', 'Charcoal', 'Motley & Striped', 'Vanish', 'Andere Tiere']
+GALLERY_LABELS = {}   # Beschriftung der Filter-Buttons, falls abweichend von der Kategorie (nur Englisch nötig)
+
+APP_POINTS = [
+    ('cn-hub', 'Hub', 'Fällige Fütterungen, Häutungen und Gelege auf einen Blick.'),
+    ('cn-collection', 'Bestand', 'Jedes Tier mit Foto, Genetik und Verlauf.'),
+    ('cn-lineage', 'Stammbaum', 'Eltern, Geschwister und Nachzuchten verknüpft.'),
+    ('cn-calculator', 'Genetikrechner', 'Verpaarungen durchspielen, bevor sie stattfinden.'),
+]
+
+# ============================================================================
+# PROJEKTE + PROJEKT-DETAILSEITEN
+# ============================================================================
+
+PROJEKTE = {
+    'title': 'Projekte',
+    'description': 'Unsere Zuchtprojekte: Hypo Diffused High Pieds, Diffused Motley & Striped Pieds und Vanishing Motley & Striped.',
+    'eyebrow': 'Projekte',
+    'h1': 'Unsere **Zuchtprojekte**',
+    'intro': 'Wir arbeiten an wenigen, klar definierten Projekten. Jedes verfolgt ein eigenes Zuchtziel auf Pied-Sided-Basis – kombiniert mit Hypo, Diffused, Motley und Striped.',
+    'project_label': 'Projekt',          # „Projekt 1“, „Projekt 2“ …
+    'genes_label': 'Genetik',
+    'button': 'Details zum Projekt',
+    'contact_h2': 'Fragen zu einem **Projekt?**',
+}
+
+# Projekt-Detailseiten (gemeinsame Texte; Inhalte je Projekt stehen in PROJECTS)
+PROJEKT_DETAIL = {
+    'description': 'Zuchtprojekt {title} – {teaser}',   # {title} und {teaser} werden ersetzt
+    'breadcrumb': 'Projekte',
+    'breadcrumb_label': 'Brotkrumen',
+    'gallery_eyebrow': 'Galerie',
+    'gallery_h2': 'Fotos aus **diesem Projekt**',
+    'gallery_bar_label': 'Galerie scrollen',
+    'all_projects': 'Alle Projekte',
+    'contact_h2': 'Fragen, Interesse oder **Anmerkungen?**',
+}
+
+# Die drei Projekte (Projektseite, Detailseiten, Startseite, Navigation)
 PROJECTS = [
     {
         'slug': 'hypo-diffused-high-pieds',
@@ -84,39 +237,25 @@ PROJECTS = [
     },
 ]
 
-# ---------------------------------------------------------------- Startseite
-TRUST = [
-    ('egg', 'Eigene Zuchten', 'Alle Tiere schlüpfen bei uns in Bielefeld.'),
-    ('git-branch', 'Dokumentierte Abstammung', 'Über unsere eigene App genau nachvollziehbar.'),
-    ('store', 'Store auf MorphMarket', 'Alle verfügbaren Tiere mit Genetik und Preisen.'),
-    ('map-pin', 'Übergabe in Bielefeld & Hamm', 'Persönlich vor Ort oder auf der Terraristika Hamm.'),
-]
+# ============================================================================
+# NACHZUCHTEN
+# ============================================================================
 
-GALLERY_CATS = ['Alle', 'Diffused', 'Charcoal', 'Motley & Striped', 'Andere Tiere']
-# Galerie Startseite: (Datei in img/galerie/, Breite, Höhe, Label, Kategorie).
-# Die ersten vier stammen aus dem Design, der Rest aus den Projekt-Galerien
-# (Label = Projekttitel). Kategorien ohne Fotos werden als Filter ausgeblendet.
-HOME_GALLERY = [
-    ('start-projekt-detail-1.jpg', 1200, 1200, 'Hypo Diffused Motley-x-Striped het Charcoal', 'Diffused'),
-    ('start-vanish-projekte.jpg', 1211, 902, 'Hypo Diffused Motley-x-Striped', 'Charcoal'),
-    ('start-pied-projekte.jpg', 1211, 902, 'Striped Pied', 'Motley & Striped'),
-    ('pied-1.jpg', 1565, 900, 'Hypo Diffused High Pied', 'Diffused'),
-    ('start-motley-projekte.jpg', 1211, 902, 'Motley Pied', 'Motley & Striped'),
-    ('pied-3.jpg', 1522, 900, 'Hypo Diffused High Pied', 'Diffused'),
-    ('pied-motley-3.jpg', 1441, 900, 'Diffused Motley & Striped Pied', 'Motley & Striped'),
-    ('vanish-2.jpg', 1486, 900, 'Vanishing Motley & Striped', 'Motley & Striped'),
-    ('pied-2.jpg', 1173, 900, 'Hypo Diffused High Pied', 'Diffused'),
-    ('pied-motley-6.jpg', 1235, 900, 'Diffused Motley & Striped Pied', 'Motley & Striped'),
-]
+NACHZUCHTEN = {
+    'title': 'Nachzuchten',
+    'description': 'Aktuelle Kornnattern-Nachzuchten von Bleeding Edge Corns – alle verfügbaren Tiere auf MorphMarket.',
+    'eyebrow': 'Nachzuchten',
+    'h1': 'Aktuelle **Nachzuchten**',
+    'intro': 'Hier siehst du eine kleine Auswahl. Alle verfügbaren Nachzuchten findest du auf MorphMarket.',
+    'button': 'Alle Nachzuchten',
+    'steps_eyebrow': 'So bekommst du dein Tier',
+    'faq_eyebrow': 'FAQ',
+    'faq_h2': 'Häufige **Fragen**',
+    'faq_text': 'Einen kurzen Überblick zur Haltung findest du auf unserer Seite [Kornnatter](kornnatter/).',
+    'contact_h2': 'Fragen, Interesse oder **Anmerkungen?**',
+}
 
-APP_POINTS = [
-    ('layout-dashboard', 'Hub', 'Alle Tiere, Gelege und Termine auf einen Blick.'),
-    ('library', 'Collection', 'Jedes Tier mit Fotos, Abstammung und genauer Genetik.'),
-    ('git-fork', 'Lineage', 'Die Abstammung über Generationen zurückverfolgen.'),
-    ('search', 'Filter & Suche', 'Tiere gezielt nach Geschlecht, Genetik, Alter oder Tags finden.'),
-]
-
-# ---------------------------------------------------------------- Nachzuchten
+# Ablauf in 4 Schritten: (Icon, Titel, Text)
 STEPS = [
     ('search', 'Tier auf MorphMarket aussuchen', 'Alle verfügbaren Tiere mit Fotos, Genetik und Preis.'),
     ('send', 'Anfrage senden', 'Direkt über MorphMarket oder unser Kontaktformular.'),
@@ -133,7 +272,25 @@ FAQ = [
     ('Anzahlung', 'Eine Anzahlung ist verbindlich und wird bei der Übergabe vollständig auf den Kaufpreis angerechnet. Entscheidest du dich später doch anders, verbleibt sie bei uns – sofern nichts anderes vereinbart wurde. Sollten wir ein Tier einmal nicht wie zugesagt abgeben können, erstatten wir dir die Anzahlung natürlich vollständig.'),
 ]
 
-# ---------------------------------------------------------------- Kornnatter
+# ============================================================================
+# KORNNATTER
+# ============================================================================
+
+KORNNATTER = {
+    'title': 'Kornnatter',
+    'description': 'Die Kornnatter (Pantherophis guttatus) kurz erklärt: Haltung, Ernährung, Winterruhe, Genetik, Zucht und FAQ.',
+    'eyebrow': 'Kurz erklärt',
+    'h1': 'Die Kornnatter – **Pantherophis guttatus**',
+    'lead': 'Die Kornnatter gehört zu den beliebtesten Schlangen in der Terraristik – und das aus gutem Grund. Sie überzeugt durch ihr ruhiges Wesen, ihre beeindruckende Farbenvielfalt und eine vergleichsweise unkomplizierte Haltung. Dennoch trägt jeder Halter die Verantwortung, seinem Tier dauerhaft eine artgerechte Umgebung zu bieten!',
+    'text': 'Auf dieser Seite findest du einen kompakten Überblick über die wichtigsten Themen rund um die Kornnatter.',
+    'img_alt': 'Kornnatter',
+    'topics_eyebrow': 'Themen',
+    'topics_h2': 'Alles, was du **wissen musst**',
+    'fazit_label': 'Fazit',
+    'close_button': 'Schließen ↑',
+}
+
+# Kennzahlen: (Icon, Wert, Beschriftung)
 STATS = [
     ('thermometer-snowflake', '22–24 °C', 'kühle Seite'),
     ('sun', 'bis 30 °C', 'Sonnenplatz'),
@@ -248,24 +405,95 @@ Unsere aktuell verfügbaren Nachzuchten veröffentlichen wir über **Morphmarket
 Natürlich. Wenn du Fragen zu unseren Tieren, unseren Projekten oder zur Haltung von Kornnattern hast, freuen wir uns über deine Nachricht. Nutze dafür einfach unser Kontaktformular."""},
 ]
 
-# ---------------------------------------------------------------- App
-APP_FEATURES = [
-    {'icon': 'layout-dashboard', 'title': 'Hub', 'claim': 'alles Wichtige auf einen Blick.', 'lead': 'Der Hub ist die zentrale Übersicht der App.',
-     'paras': ['Hier findest du auf einen Blick die wichtigsten Informationen zu deinem Bestand – von der Anzahl deiner Tiere über aktuelle Gelege bis hin zu anstehenden Ereignissen. So hast du jederzeit einen schnellen Überblick darüber, was gerade passiert und worauf du achten solltest.'],
-     'points': ['Lorem ipsum dolor sit amet', 'Laufende Inkubationen mit Schlupftermin', 'Letzte Einträge im Bestand'],
-     'screenshot': ''},  # z. B. 'img/app/hub.jpg' (1179 × 2556)
-    {'icon': 'library', 'title': 'Collection', 'claim': 'dein Bestand. Übersichtlich organisiert.', 'lead': 'In der Collection findest du alle deine Tiere an einem Ort.',
-     'paras': ['Mit verschiedenen Filtern und Suchmöglichkeiten kannst du deinen Bestand gezielt nach Merkmalen wie Geschlecht, Genetik, Alter oder individuellen Tags durchsuchen.', 'So findest du schnell genau die Tiere, nach denen du gerade suchst – auch wenn dein Bestand wächst.'],
-     'points': ['Lorem ipsum dolor sit amet', 'Fotohistorie über alle Lebensphasen', 'Genetik inklusive het-Angaben'],
-     'screenshot': ''},
-    {'icon': 'git-fork', 'title': 'Lineage', 'claim': 'Abstammung einfach nachvollziehen.', 'lead': 'Lineage verbindet die Tiere deines Bestands miteinander und macht ihre Abstammung übersichtlich sichtbar.',
-     'paras': ['Eltern, Nachkommen und genetische Informationen lassen sich direkt miteinander verknüpfen und nachvollziehen. So entsteht mit der Zeit eine vollständige Übersicht über die Entwicklung deiner Zucht und die Linien hinter jedem Tier.'],
-     'points': ['Eltern, Geschwister und Gelege verknüpft', 'Stammbaum über mehrere Generationen', 'Nachvollziehbare Herkunft bei der Übergabe'],
-     'screenshot': ''},
-]
-APP_SCREENSHOT_HOME = ''  # Screenshot im Smartphone-Mockup auf der Startseite
+# ============================================================================
+# APP
+# ============================================================================
 
-# ---------------------------------------------------------------- Kontakt
+APP = {
+    'title': 'App',
+    'description': 'Cornnector – die App für Kornnattern-Halter und -Züchter: Fütterung, Häutung, Verpaarung, Gelege und Genetik in einer App. Kostenlos für iPhone und Android.',
+    'eyebrow': 'Unsere App',
+    'h1': 'Deine Nattern. **Im Cornnector verbunden.**',
+    'intro': 'Aus unserer eigenen Zucht-App ist **Cornnector** entstanden: die App für alle, die Kornnattern halten oder züchten. Kostenlos für iPhone und Android, ohne Konto, deine Daten bleiben auf deinem Handy.',
+    # Abschluss unter den Funktionen: Link zur Cornnector-Seite
+    'cta_h2': 'Alles über **Cornnector**',
+    'cta_text': 'Alle Funktionen, die Anleitung und die Warteliste für den Start findest du auf der Cornnector-Seite.',
+    'cta_button': 'Zur Cornnector-Seite',
+    'cta_url': '',  # TODO: Adresse der Cornnector-Seite eintragen (z. B. 'https://cornnector.de/')
+    'cta_note': 'Bald im App Store und bei Google Play.',
+    'contact_h2': 'Fragen zur **App?**',
+}
+
+# Die drei Funktionen (Zickzack auf der App-Seite). Screenshots aus der Cornnector-App (1179 × 2556).
+APP_FEATURES = [
+    {'icon': 'cn-hub', 'title': 'Hub', 'claim': 'wer heute dran ist.', 'lead': 'Der Hub zeigt jeden Tag, welche Tiere gefüttert werden müssen, wer in der Häutung ist und wann das nächste Gelege schlüpft.',
+     'paras': ['Gefüttert wird direkt aus der Liste: Ein Wisch nach links trägt die Fütterung ein, ein Wisch nach rechts markiert die Häutung. Mit QR-Etiketten am Terrarium geht die Fütterungsrunde per Scan noch schneller.'],
+     'points': ['Fällige Fütterungen auf einen Blick', 'Fütterungsrunde per QR-Code', 'Häutung pausiert die Fütterung automatisch'],
+     'screenshot': 'img/app/hub.png', 'demo': 'swipe'},  # demo = animierte Geste im Kachel-Phone
+    {'icon': 'cn-incubator', 'title': 'Zucht', 'claim': 'von der Verpaarung bis zum Schlupf.', 'lead': 'Jede Verpaarung wird einzeln festgehalten, auch mit externen Tieren.',
+     'paras': ['Das Gelege übernimmt Vater und Verpaarungsdatum, der Inkubator zeigt die Schlupfprognose aus den bisherigen Gelegen der Mutter. Beim Schlupf entstehen die Nachzuchten direkt mit Eltern und Geschwistern im Stammbaum.'],
+     'points': ['Verpaarungen im Verlauf beider Tiere', 'Schlupfprognose und Zuchtbilanz inklusive Slugs', 'Stammbaum über Generationen'],
+     'screenshot': 'img/app/zucht.png', 'demo': 'menu'},
+    {'icon': 'cn-calculator', 'title': 'Genetikrechner', 'claim': 'Verpaarungen durchspielen.', 'lead': 'Mit deinen Tieren oder mit jeder Genetik, die du eintippst.',
+     'paras': ['Kombis wie Shatter oder Ultramel zerlegt der Rechner in ihre Gene, Allele wie Motley und Stripe werden richtig gerechnet. Das Ergebnis siehst du als Prozent, Bruch und erwartete Anzahl pro Gelege.'],
+     'points': ['Mehr als 150 Gene, Linien und Kombis', 'het und possible het', 'Erwartete Nachzucht pro Gelege'],
+     'screenshot': 'img/app/rechner.png', 'demo': 'calc'},
+]
+APP_SCREENSHOT_HOME = 'img/app/hub.png'  # Screenshot im Smartphone-Mockup auf der Startseite
+
+# Texte in den animierten App-Screens (Kacheln auf der App-Seite)
+APP_DEMO = {
+    'date': 'Dienstag, 3. November', 'greeting': 'Guten Morgen, Tom!',
+    'due': 'Fällig', 'feedings': 'Fütterungen', 'pause': 'Pause', 'shed': 'Häutung', 'hatch': 'Schlupf', 'days': 'Tage',
+    'incubator': 'Inkubator', 'clutches': '1 Gelege', 'day': 'Tag 56 / 67', 'hatch_eta': 'Schlupf ca. 14. Nov. · in 11 T',
+    'feed_today': 'Heute füttern', 'animals_3': '3 Tiere', 'feeding': 'Fütterung', 'long_press': 'lange drücken: Menü', 'in_shed': 'In Häutung',
+    'search': 'Name, Genetik, Züchter …', 'all': 'Alle', 'animals_24': '24 Tiere', 'collection': 'Bestand',
+    # Tiermenü (Reihenfolge fest: Häutung, Fütterung, In Häutung, Gewicht, Foto, Abstammung, QR, Verpaart, Rechner)
+    'menu': ['Häutung eintragen', 'Fütterung eintragen', 'In Häutung markieren', 'Gewicht eintragen', 'Foto aufnehmen',
+             'Abstammung zeigen', 'QR-Etikett', 'Verpaart mit …', 'Im Rechner verpaaren'],
+    'sire': 'Vater', 'dam': 'Mutter', 'from_collection': 'Aus Bestand', 'genes_hint': 'z. B. Shatter, het Anery, 66% het Hypo',
+    'pct': '25 %', 'count': '≈ 3,0', 'offspring': 'Erwartete Nachzucht', 'phenotypes': '4 Phänotypen', 'clutch_size': 'Gelegegröße',
+    'genetics': 'Genetik', 'calculator': 'Genetikrechner',
+}
+
+# ============================================================================
+# KONTAKT
+# ============================================================================
+
+KONTAKT = {
+    'title': 'Kontakt',
+    'description': 'Kontakt zu Bleeding Edge Corns – Fragen zu Nachzuchten, Projekten oder Haltung.',
+    'eyebrow': 'Kontakt',
+    'h1': 'Fragen, Interesse oder **Anmerkungen?**',
+    'text': 'Schreib uns – wir melden uns schnellstmöglich.',
+    # Formular
+    'topic_label': 'Worum geht es?',
+    'name_label': 'Name *',
+    'name_placeholder': 'Vor- und Nachname',
+    'email_label': 'E-Mail *',
+    'email_placeholder': 'name@beispiel.de',
+    'animal_label': 'Tier-ID',            # nur beim Thema „Nachzucht“
+    'animal_hint': 'optional, z. B. NZ-2026-039',
+    'animal_placeholder': 'NZ-2026-',
+    'msg_label': 'Nachricht *',
+    'msg_placeholder': 'Deine Nachricht an uns',
+    'consent': 'Ich bin mit der Verarbeitung meiner Angaben zur Beantwortung meiner Anfrage einverstanden. Mehr dazu in der [Datenschutzerklärung](datenschutz/). *',
+    'required_note': '* Pflichtfelder',
+    'submit': 'Nachricht senden',
+    # Fehlermeldungen
+    'err_name': 'Bitte gib deinen Namen ein.',
+    'err_email_empty': 'Bitte gib deine E-Mail-Adresse ein.',
+    'err_email_invalid': 'Bitte gib eine gültige E-Mail-Adresse ein.',
+    'err_msg': 'Bitte schreib uns eine Nachricht.',
+    'err_consent': 'Bitte stimme der Verarbeitung deiner Angaben zu.',
+    'err_send': 'Die Nachricht konnte leider nicht gesendet werden. Bitte versuch es später noch einmal oder schreib uns direkt an {email}.',
+    # Nach dem Absenden
+    'success_h2': 'Danke für deine **Nachricht.**',
+    'success_text': 'Wir melden uns schnellstmöglich bei dir.',
+    'success_button': 'Weitere Nachricht senden',
+}
+
+# Kontaktinfos links: (Icon, Beschriftung, Text, Link oder '')
 CONTACT_INFO = [
     ('mail', 'E-Mail', EMAIL, 'mailto:' + EMAIL),
     ('map-pin', 'Übergabe', 'Persönlich in Bielefeld oder auf der Terraristika Hamm', ''),
@@ -273,7 +501,15 @@ CONTACT_INFO = [
 ]
 CONTACT_TOPICS = ['Nachzucht', 'Projekte', 'Haltung', 'Sonstiges']
 
-# ---------------------------------------------------------------- Rechtliches
+# ============================================================================
+# IMPRESSUM + DATENSCHUTZ
+# ============================================================================
+
+LEGAL = {
+    'eyebrow': 'Rechtliches',
+    'toc': 'Inhalt',
+}
+
 # Zeilen mit "|" = Adressblock, "> " = Hinweis, "- " = Liste. RECHTLICH PRÜFEN LASSEN.
 # Abschnitt "Google Fonts" ist entfallen: Roboto wird lokal ausgeliefert (src/fonts).
 IMPRESSUM = {'title': 'Impressum', 'stand': 'Stand: September 2026', 'body': """## Angaben gemäß § 5 DDG
@@ -330,11 +566,9 @@ Die von dir übermittelten Daten werden ausschließlich zur Bearbeitung deiner A
 Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht darin, eingehende Anfragen beantworten und mit dir kommunizieren zu können.
 Sofern deine Anfrage auf den Abschluss eines Vertrags oder die Anbahnung eines Vertragsverhältnisses gerichtet ist, kann zusätzlich Art. 6 Abs. 1 lit. b DSGVO als Rechtsgrundlage dienen.
 Die über das Kontaktformular übermittelten Daten werden nur so lange gespeichert, wie dies für die Bearbeitung der Anfrage erforderlich ist. Nach abschließender Bearbeitung der Anfrage werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten oder andere rechtliche Gründe für eine weitere Speicherung bestehen.
-## 6. Bilder und Links zu MorphMarket
-> Dieser Abschnitt entfällt, sobald die Fotos der Nachzuchten lokal auf dem eigenen Webserver gespeichert werden.
-Auf den Seiten „Startseite“ und „Nachzuchten“ zeigen wir Fotos unserer aktuellen Nachzuchten. Diese Fotos werden derzeit direkt von Servern der Plattform MorphMarket geladen. Dabei kann insbesondere die IP-Adresse des zugreifenden Geräts an MorphMarket bzw. deren Dienstleister übermittelt werden.
-Klickst du auf eine Nachzucht oder einen MorphMarket-Button, wirst du auf die Website von MorphMarket weitergeleitet. Dort gelten die Datenschutzbestimmungen von MorphMarket.
-Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht in einer aktuellen und übersichtlichen Darstellung unserer verfügbaren Nachzuchten.
+## 6. Links zu MorphMarket
+Die Fotos unserer Nachzuchten liegen auf unserem eigenen Webserver. Beim Aufruf der Seiten werden keine Daten an MorphMarket übermittelt.
+Klickst du auf eine Nachzucht oder einen MorphMarket-Button, wirst du auf die Website von MorphMarket weitergeleitet. Erst dann werden Daten an MorphMarket übertragen, und es gelten die Datenschutzbestimmungen von MorphMarket.
 ## 7. Keine Analyse- oder Tracking-Dienste
 Auf dieser Website werden derzeit keine Analyse-, Tracking- oder Werbedienste eingesetzt.
 Insbesondere verwenden wir derzeit:

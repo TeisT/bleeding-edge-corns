@@ -8,18 +8,25 @@
   const headerH = () => (parseFloat(getComputedStyle(html).getPropertyValue('--hh')) || 96) + 1;
 
   /* ---------------------------------------------------------- Header: Scrollzustand */
-  const onScrollHeader = () => html.classList.toggle('is-scrolled', window.scrollY > 24);
+  // Mit Abstand zwischen Ein- und Ausschalten (Hysterese): Der Header wird beim Umschalten ~20 px niedriger,
+  // dadurch springt scrollY. Ohne Abstand schaltet er am Grenzwert hin und her (Flackern beim Hochscrollen).
+  const onScrollHeader = () => {
+    const y = window.scrollY, on = html.classList.contains('is-scrolled');
+    if (!on && y > 48) html.classList.add('is-scrolled');
+    else if (on && y < 8) html.classList.remove('is-scrolled');
+  };
   onScrollHeader();
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
   /* ---------------------------------------------------------- Burger-Menü */
   const burger = $('.burger');
   const menu = $('#mobile-menu');
+  const menuLabel = burger && burger.getAttribute('aria-label');
   const setMenu = open => {
     if (!burger || !menu) return;
     html.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü');
+    burger.setAttribute('aria-label', open ? burger.dataset.labelClose : menuLabel);
     menu.hidden = !open;
   };
   if (burger) {
@@ -28,11 +35,7 @@
     window.addEventListener('resize', () => { if (isDesktop()) setMenu(false); });
   }
 
-  /* ---------------------------------------------------------- Sprach-Switch (EN-Inhalte noch offen) */
-  $$('.lang').forEach(group => {
-    const btns = $$('button', group);
-    btns.forEach(b => b.addEventListener('click', () => btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)))));
-  });
+  /* Sprach-Switch: normale Links auf die Seite in der anderen Sprache (build.py) */
 
   /* ---------------------------------------------------------- Reveal */
   const revealEls = $$('[data-reveal]');
@@ -144,7 +147,7 @@
     tabs.forEach(tab => tab.addEventListener('click', () => {
       const cat = tab.dataset.filter;
       tabs.forEach(t => t.setAttribute('aria-selected', String(t === tab)));
-      $$('.gfig', track).forEach(fig => { fig.hidden = !(cat === 'Alle' || fig.dataset.cat === cat); });
+      $$('.gfig', track).forEach(fig => { fig.hidden = !(cat === '*' || fig.dataset.cats.split('|').includes(cat)); });
       track.scrollLeft = 0;
       const s = sliders.find(x => x.track === track);
       if (s) s.measure();
@@ -237,12 +240,14 @@
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const v = k => (form.elements[k] && form.elements[k].value || '').trim();
+      // Meldungstexte stehen in content.py → data-msg-* an den Fehlerzeilen
+      const msg = (k, type = 'empty') => $(`[data-err="${k}"]`, form).getAttribute('data-msg-' + type);
       const er = {};
-      if (!v('name')) er.name = 'Bitte gib deinen Namen ein.';
-      if (!v('email')) er.email = 'Bitte gib deine E-Mail-Adresse ein.';
-      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) er.email = 'Bitte gib eine gültige E-Mail-Adresse ein.';
-      if (!v('msg')) er.msg = 'Bitte schreib uns eine Nachricht.';
-      if (!form.elements.consent.checked) er.consent = 'Bitte stimme der Verarbeitung deiner Angaben zu.';
+      if (!v('name')) er.name = msg('name');
+      if (!v('email')) er.email = msg('email');
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) er.email = msg('email', 'invalid');
+      if (!v('msg')) er.msg = msg('msg');
+      if (!form.elements.consent.checked) er.consent = msg('consent');
       ['name', 'email', 'msg', 'consent'].forEach(k => setErr(k, er[k] || ''));
       const first = Object.keys(er)[0];
       if (first) { form.elements[first].focus(); return; }
