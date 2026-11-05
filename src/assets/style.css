@@ -384,6 +384,9 @@ html.menu-open .burger .i-menu { display: none; }
 .phone--home .phone-screen { border-radius: 38px; }
 .phone--home .phone-notch { top: 12px; width: 92px; height: 26px; }
 .app-teaser-text { display: flex; flex-direction: column; gap: clamp(32px, 3.5cqw, 48px); }
+/* „Kostenlos für iPhone und Android.“ unter der Überschrift (Startseite + App-Seite) */
+.app-free { margin-top: 20px; font-size: 20px; line-height: 1.4; font-weight: 400; color: var(--white); }
+.app-free--intro { margin-top: -12px; }
 .apoints { display: flex; flex-direction: column; }
 .apoint { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 24px; align-items: start; padding-block: 26px; border-top: 1px solid var(--gray-700); }
 .apoint > div { display: flex; flex-direction: column; gap: 6px; }
@@ -626,7 +629,7 @@ a.info-val:hover { color: var(--gray-700); }
 .dm-island { position: absolute; left: 50%; top: 0.6875em; width: 7.6875em; height: 2.25em; margin-left: -3.8438em; border-radius: 1.25em; background: #000; }
 .dm-sys { position: absolute; right: 1.375em; top: 1.5em; width: 4.375em; height: 0.8125em; }
 .dm-r1 { display: flex; align-items: center; justify-content: space-between; min-height: 2.25em; }
-.dm-wm { width: 7.9375em; height: 1.25em; background: url("../img/app/wordmark.png") left center / contain no-repeat; }
+.dm-wm { width: 7.9375em; height: 1.25em; background: url("../img/app/wordmark.svg") left center / contain no-repeat; }
 .dm-btns { display: flex; gap: 0.5em; }
 .dm-btns i { width: 2.25em; height: 2.25em; border-radius: 50%; border: 1px solid #2c2a35; display: grid; place-items: center; }
 .dm-btns .icon { width: 1.125em; height: 1.125em; }

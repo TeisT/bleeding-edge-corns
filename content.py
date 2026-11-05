@@ -116,6 +116,7 @@ HOME = {
     # App
     'app_eyebrow': 'Unsere App',
     'app_h2': 'Deine Nattern. **Im Cornnector verbunden.**',
+    'app_free': 'Kostenlos für iPhone und Android.',
     'app_link': 'Mehr zur App',
     # Kontakt-Teaser
     'contact_h2': 'Fragen, Interesse oder **Anmerkungen?**',
@@ -142,6 +143,7 @@ GALLERY_LABELS = {}   # Beschriftung der Filter-Buttons, falls abweichend von de
 APP_POINTS = [
     ('cn-hub', 'Hub', 'Fällige Fütterungen, Häutungen und Gelege auf einen Blick.'),
     ('cn-collection', 'Bestand', 'Jedes Tier mit Foto, Genetik und Verlauf.'),
+    ('cn-incubator', 'Inkubator', 'Gelege mit Schlupfprognose im Blick.'),
     ('cn-lineage', 'Stammbaum', 'Eltern, Geschwister und Nachzuchten verknüpft.'),
     ('cn-calculator', 'Genetikrechner', 'Verpaarungen durchspielen, bevor sie stattfinden.'),
 ]
@@ -414,7 +416,8 @@ APP = {
     'description': 'Cornnector – die App für Kornnattern-Halter und -Züchter: Fütterung, Häutung, Verpaarung, Gelege und Genetik in einer App. Kostenlos für iPhone und Android.',
     'eyebrow': 'Unsere App',
     'h1': 'Deine Nattern. **Im Cornnector verbunden.**',
-    'intro': 'Aus unserer eigenen Zucht-App ist **Cornnector** entstanden: die App für alle, die Kornnattern halten oder züchten. Kostenlos für iPhone und Android, ohne Konto, deine Daten bleiben auf deinem Handy.',
+    'free': 'Kostenlos für iPhone und Android.',   # Zeile direkt unter der Überschrift
+    'intro': '**Cornnector** dokumentiert Fütterungen, Häutungen, Verpaarungen und Gelege – inklusive genetischer Ergebnisse. Alle Informationen digital. Direkt dort, wo du sie brauchst.',
     # Abschluss unter den Funktionen: Link zur Cornnector-Seite
     'cta_h2': 'Alles über **Cornnector**',
     'cta_text': 'Alle Funktionen, die Anleitung und die Warteliste für den Start findest du auf der Cornnector-Seite.',
@@ -512,12 +515,12 @@ LEGAL = {
 
 # Zeilen mit "|" = Adressblock, "> " = Hinweis, "- " = Liste. RECHTLICH PRÜFEN LASSEN.
 # Abschnitt "Google Fonts" ist entfallen: Roboto wird lokal ausgeliefert (src/fonts).
-IMPRESSUM = {'title': 'Impressum', 'stand': 'Stand: September 2026', 'body': """## Angaben gemäß § 5 DDG
-Max Mustermann|Musterstraße 12|12345 Musterstadt|Deutschland
+IMPRESSUM = {'title': 'Impressum', 'stand': 'Stand: November 2026', 'body': """## Angaben gemäß § 5 DDG
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld|Deutschland
 ## Kontakt
-E-Mail: hallo@example.de
+E-Mail: hey@bleeding-edge-corns.com
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
-Max Mustermann|Musterstraße 12|12345 Musterstadt
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld
 ## Hinweis zur Hobbyzucht
 Bleeding Edge Corns ist eine private, nicht gewerbliche Hobbyzucht von Kornnattern. Diese Website dient ausschließlich der Information über unsere Tiere und Zuchtprojekte.
 ## Haftung für Inhalte
@@ -527,9 +530,9 @@ Diese Website enthält Links zu externen Websites, insbesondere zu MorphMarket. 
 ## Urheberrecht
 Die Texte und Fotos auf dieser Website unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung oder Verwendung ist ohne ausdrückliche Zustimmung nicht gestattet."""}
 
-DATENSCHUTZ = {'title': 'Datenschutz', 'stand': 'Stand: September 2026', 'body': """## 1. Verantwortlicher
+DATENSCHUTZ = {'title': 'Datenschutz', 'stand': 'Stand: November 2026', 'body': """## 1. Verantwortlicher
 Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist:
-Max Mustermann|Musterstraße 12|12345 Musterstadt|Deutschland|E-Mail: hallo@example.de
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld|Deutschland|E-Mail: hey@bleeding-edge-corns.com
 ## 2. Allgemeine Hinweise
 Der Schutz deiner persönlichen Daten ist uns wichtig. Wir behandeln deine personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
 Diese Website dient der Information über unsere private Hobbyzucht von Kornnattern sowie der Vorstellung eigener Nachzuchten.
@@ -550,7 +553,7 @@ Die konkrete Speicherdauer kann von den Einstellungen und Vorgaben unseres Webho
 Diese Website wird bei einem externen Webhosting-Anbieter betrieben.
 Beim Aufruf der Website werden technisch notwendige Daten an den Server unseres Hosting-Anbieters übertragen und dort verarbeitet. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browserinformationen und aufgerufene Inhalte gehören.
 Der Hosting-Anbieter verarbeitet diese Daten in unserem Auftrag. Soweit erforderlich, besteht mit dem Hosting-Anbieter ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.
-Hosting-Anbieter:|[Name des Hosting-Anbieters eintragen]
+Hosting-Anbieter:|Mittwald CM Service GmbH & Co. KG|Königsberger Straße 4–6|32339 Espelkamp|Deutschland
 Die Verarbeitung erfolgt zum Zweck der sicheren und zuverlässigen Bereitstellung dieser Website.
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse besteht in der technisch sicheren und zuverlässigen Bereitstellung unseres Internetangebots.
 ## 5. Kontaktformular

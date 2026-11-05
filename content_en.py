@@ -96,6 +96,7 @@ HOME = {
     'about_img_alt': 'Torben with a corn snake',
     'app_eyebrow': 'Our app',
     'app_h2': 'Your snakes. **Connected in Cornnector.**',
+    'app_free': 'Free for iPhone and Android.',
     'app_link': 'More about the app',
     'contact_h2': 'Questions, interest or **comments?**',
 }
@@ -113,6 +114,7 @@ GALLERY_LABELS = {'Andere Tiere': 'Other animals'}
 APP_POINTS = [
     ('cn-hub', 'Hub', 'Due feedings, sheds and clutches at a glance.'),
     ('cn-collection', 'Collection', 'Every animal with photo, genetics and history.'),
+    ('cn-incubator', 'Incubator', 'Clutches and hatch forecast at a glance.'),
     ('cn-lineage', 'Lineage', 'Parents, siblings and offspring linked.'),
     ('cn-calculator', 'Genetics calculator', 'Play through pairings before they happen.'),
 ]
@@ -367,7 +369,8 @@ APP = {
     'description': 'Cornnector – the app for corn snake keepers and breeders: feeding, sheds, pairings, clutches and genetics in one app. Free for iPhone and Android.',
     'eyebrow': 'Our app',
     'h1': 'Your snakes. **Connected in Cornnector.**',
-    'intro': 'Our own breeding app grew into **Cornnector**: the app for everyone who keeps or breeds corn snakes. Free for iPhone and Android, no account, and your data stays on your phone.',
+    'free': 'Free for iPhone and Android.',
+    'intro': '**Cornnector** documents feedings, sheds, pairings and clutches – including genetic results. All your information, digital. Right where you need it.',
     'cta_h2': 'All about **Cornnector**',
     'cta_text': 'You’ll find all features, the guide and the waiting list for the launch on the Cornnector page.',
     'cta_button': 'To the Cornnector page',
@@ -463,13 +466,13 @@ LEGAL = {
     'toc': 'Contents',
 }
 
-IMPRESSUM = {'title': 'Legal notice', 'stand': 'As of: September 2026', 'body': """> This is a translation for your convenience. Only the German version is legally binding.
+IMPRESSUM = {'title': 'Legal notice', 'stand': 'As of: November 2026', 'body': """> This is a translation for your convenience. Only the German version is legally binding.
 ## Information according to § 5 DDG
-Max Mustermann|Musterstraße 12|12345 Musterstadt|Germany
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld|Germany
 ## Contact
-Email: hallo@example.de
+Email: hey@bleeding-edge-corns.com
 ## Responsible for content according to § 18 (2) MStV
-Max Mustermann|Musterstraße 12|12345 Musterstadt
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld
 ## Note on hobby breeding
 Bleeding Edge Corns is a private, non-commercial hobby breeding of corn snakes. This website serves exclusively to inform about our animals and breeding projects.
 ## Liability for content
@@ -479,10 +482,10 @@ This website contains links to external websites, in particular to MorphMarket. 
 ## Copyright
 The texts and photos on this website are subject to German copyright law. Copying or using them without explicit permission is not allowed."""}
 
-DATENSCHUTZ = {'title': 'Privacy policy', 'stand': 'As of: September 2026', 'body': """> This is a translation for your convenience. Only the German version is legally binding.
+DATENSCHUTZ = {'title': 'Privacy policy', 'stand': 'As of: November 2026', 'body': """> This is a translation for your convenience. Only the German version is legally binding.
 ## 1. Controller
 The controller responsible for processing personal data on this website is:
-Max Mustermann|Musterstraße 12|12345 Musterstadt|Germany|Email: hallo@example.de
+Torben Teismann|Ravensberger Straße 83|33602 Bielefeld|Germany|Email: hey@bleeding-edge-corns.com
 ## 2. General information
 Protecting your personal data is important to us. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.
 This website provides information about our private hobby breeding of corn snakes and presents our own hatchlings.
@@ -503,7 +506,7 @@ The specific storage period may depend on the settings and requirements of our w
 This website is operated by an external web hosting provider.
 When you visit the website, technically necessary data is transferred to and processed on our hosting provider’s server. This may include in particular the IP address, date and time of access, browser information and the content accessed.
 The hosting provider processes this data on our behalf. Where necessary, a data processing agreement in accordance with Art. 28 GDPR is in place with the hosting provider.
-Hosting provider:|[Enter name of hosting provider]
+Hosting provider:|Mittwald CM Service GmbH & Co. KG|Königsberger Straße 4–6|32339 Espelkamp|Germany
 Processing takes place for the purpose of providing this website securely and reliably.
 The legal basis is Art. 6 (1) (f) GDPR. Our legitimate interest lies in the technically secure and reliable provision of our website.
 ## 5. Contact form

@@ -639,6 +639,7 @@ def page_home(animals, gallery):
       <div {reveal(80)}>
         {eyebrow(T['app_eyebrow'], 'mb18')}
         <h2 class="h2">{md(T['app_h2'], pg)}</h2>
+        <p class="app-free">{md(T['app_free'], pg)}</p>
       </div>
       <div class="apoints">{app_points}</div>
       <a class="link-arrow link-arrow--white" href="{pg.link('app/')}" {reveal(200)}>{esc(T['app_link'])}<span aria-hidden="true">→</span></a>
@@ -904,6 +905,7 @@ def page_app():
   <div class="wrap app-intro-inner">
     <div class="eyebrow" {reveal(0)}>{esc(T['eyebrow'])}</div>
     <h1 class="h1" {reveal(80)}>{md(T['h1'], pg)}</h1>
+    <p class="app-free app-free--intro" {reveal(120)}>{md(T['free'], pg)}</p>
     <p class="body-18 c-e2 dmax" {dmax(560)} {reveal(160)}>{md(T['intro'], pg)}</p>
     <div class="app-phones">{''.join(phones)}</div>
   </div>
